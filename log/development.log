@@ -1,0 +1,1171 @@
+  [1m[36m (750.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (572.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20150917170436)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (164.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150917170436"]]
+  [1m[36m (879.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:12:10 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+AbstractController::ActionNotFound (The action 'index' could not be found for HomeController):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/base.rb:132:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:30:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:196:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:237:in `block in action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `each'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:821:in `call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/conditionalget.rb:25:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/flash.rb:260:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/query_cache.rb:36:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/migration.rb:377:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.3ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:14:53 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template home/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/home/stephanie/tests/rails-devise/app/views"
+  * "/home/stephanie/tests/rails-devise/vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views"
+):
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/path_set.rb:46:in `find'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/lookup_context.rb:121:in `find'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/template_renderer.rb:8:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/renderer.rb:42:in `render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/renderer.rb:23:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:100:in `_render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:83:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/rendering.rb:25:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rendering.rb:16:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:43:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/base.rb:198:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:117:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:117:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:505:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:505:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/notifications.rb:164:in `block in instrument'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/notifications.rb:164:in `instrument'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/base.rb:137:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:30:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:196:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:237:in `block in action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `each'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:821:in `call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/conditionalget.rb:25:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/flash.rb:260:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/query_cache.rb:36:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/migration.rb:377:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (44.9ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:16:19 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 3464ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.):
+    3: <head>
+    4:   <title>RailsDevise</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__2919375515331172080_42731060'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.3ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:17:35 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2649ms (Views: 2640.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-af092ef0617f555080d010347335ed442348dff8f13dc1e093101d1673dda1d4.css?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/restricted.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 172.17.0.169 at 2015-09-17 10:17:38 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/restricted" for 172.17.0.169 at 2015-09-17 10:19:23 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/restricted"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.1ms)
+
+
+Started GET "/restricted/" for 172.17.0.169 at 2015-09-17 10:19:27 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/restricted"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.7ms)
+
+
+Started GET "/restricted/" for 172.17.0.169 at 2015-09-17 10:21:10 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+AbstractController::ActionNotFound (The action 'index' could not be found for RestrictedController):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/base.rb:132:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:30:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:196:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:237:in `block in action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `each'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:821:in `call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/conditionalget.rb:25:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/flash.rb:260:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/query_cache.rb:36:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/migration.rb:377:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.7ms)
+
+
+Started GET "/restricted/" for 172.17.0.169 at 2015-09-17 10:21:29 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestrictedController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.17.0.169 at 2015-09-17 10:21:29 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 396ms (Views: 381.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-af092ef0617f555080d010347335ed442348dff8f13dc1e093101d1673dda1d4.css?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/restricted.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/restricted.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 172.17.0.169 at 2015-09-17 10:21:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_up" for 172.17.0.169 at 2015-09-17 10:21:39 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 135ms (Views: 133.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 172.17.0.169 at 2015-09-17 10:21:51 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jw2Tl7bMIitzx2uD8NvxM4Dh8Hu/XwcfDdbuMdy3fbosrxZgvEZ1yg8HyPkEZZm5leEcTJDBvFyonMvT5JBXtw==", "user"=>{"email"=>"stephanie@creatorrepublic.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'stephanie@creatorrepublic.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "stephanie@creatorrepublic.com"], ["encrypted_password", "$2a$10$/b1VakfZNvDeToLv7ajXlu8PTKuYQtDQ/ZyQXs92TO5XQw.axlmRe"], ["created_at", "2015-09-17 17:21:51.779296"], ["updated_at", "2015-09-17 17:21:51.779296"]]
+  [1m[36m (1018.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-09-17 17:21:52.800472"], ["current_sign_in_at", "2015-09-17 17:21:52.800472"], ["last_sign_in_ip", "172.17.0.169"], ["current_sign_in_ip", "172.17.0.169"], ["sign_in_count", 1], ["updated_at", "2015-09-17 17:21:52.801374"], ["id", 1]]
+  [1m[35m (720.5ms)[0m  commit transaction
+Redirected to http://172.17.0.155:3000/restricted
+Completed 302 Found in 1843ms (ActiveRecord: 1739.8ms)
+
+
+Started GET "/restricted" for 172.17.0.169 at 2015-09-17 10:21:53 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RestrictedController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+ActionView::MissingTemplate (Missing template restricted/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/stephanie/tests/rails-devise/app/views"
+  * "/home/stephanie/tests/rails-devise/vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views"
+):
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/path_set.rb:46:in `find'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/lookup_context.rb:121:in `find'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/template_renderer.rb:8:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/renderer.rb:42:in `render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/renderer/renderer.rb:23:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:100:in `_render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:83:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/rendering.rb:25:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rendering.rb:16:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:43:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/base.rb:198:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:117:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:117:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:505:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:505:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/notifications.rb:164:in `block in instrument'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/notifications.rb:164:in `instrument'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/abstract_controller/base.rb:137:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.2.4/lib/action_view/rendering.rb:30:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:196:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_controller/metal.rb:237:in `block in action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `each'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/journey/router.rb:30:in `serve'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:821:in `call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/conditionalget.rb:25:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/flash.rb:260:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/query_cache.rb:36:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.4/lib/active_record/migration.rb:377:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (23.2ms)
+
+
+Started GET "/restricted" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestrictedController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered restricted/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 490ms (Views: 458.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-af092ef0617f555080d010347335ed442348dff8f13dc1e093101d1673dda1d4.css?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/restricted.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 172.17.0.169 at 2015-09-17 10:22:55 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:23:02 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 116ms (Views: 114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:25:45 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 437ms (Views: 427.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-af092ef0617f555080d010347335ed442348dff8f13dc1e093101d1673dda1d4.css?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/restricted.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 172.17.0.169 at 2015-09-17 10:25:46 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_out" for 172.17.0.169 at 2015-09-17 10:25:57 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.0ms)
+
+
+Started GET "/user/sign_out" for 172.17.0.169 at 2015-09-17 10:26:11 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/user/sign_out"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.8ms)
+
+
+Started GET "/users/sign_out" for 172.17.0.169 at 2015-09-17 10:26:20 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.2.1/lib/web_console/middleware.rb:31:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.4/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/static.rb:116:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:165:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.8ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:29:03 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 447ms (Views: 437.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 172.17.0.169 at 2015-09-17 10:29:06 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"U41INbXyV+zXTOO1nhINRsxE7HahOv383k0wma51267wL83Cv3gADauMQM9qrGXM2UQAQY6kRr97BxV7llLxow=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://172.17.0.155:3000/
+Completed 302 Found in 31ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:29:06 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 163ms (Views: 161.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.17.0.169 at 2015-09-17 10:29:08 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 149ms (Views: 146.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.17.0.169 at 2015-09-17 10:29:22 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"20E7BJ6ijJE+fMmBkKmOUBRy5G5qLgR0gAB1/0H4aE/23z3/IabZOdA1k2C1/+i3BNTO6RuUtXT8I/JAZhhRiA==", "user"=>{"email"=>"stephanie@creatorrepublic.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "stephanie@creatorrepublic.com"]]
+Completed 401 Unauthorized in 80ms (ActiveRecord: 0.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"20E7BJ6ijJE+fMmBkKmOUBRy5G5qLgR0gAB1/0H4aE/23z3/IabZOdA1k2C1/+i3BNTO6RuUtXT8I/JAZhhRiA==", "user"=>{"email"=>"stephanie@creatorrepublic.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 198ms (Views: 126.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.17.0.169 at 2015-09-17 10:29:25 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TXXp9w+1tynqq0RCMe8Hp24rZkdT6f2NBSt0MsyK4Z5g6+8MsLHigQTiHqMUuWFAfo1MwCJTTI15CPON62rYWQ==", "user"=>{"email"=>"stephanie@creatorrepublic.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "stephanie@creatorrepublic.com"]]
+Completed 401 Unauthorized in 71ms (ActiveRecord: 0.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TXXp9w+1tynqq0RCMe8Hp24rZkdT6f2NBSt0MsyK4Z5g6+8MsLHigQTiHqMUuWFAfo1MwCJTTI15CPON62rYWQ==", "user"=>{"email"=>"stephanie@creatorrepublic.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 189ms (Views: 119.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.17.0.169 at 2015-09-17 10:29:29 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WkBnzMxnfdCEBNzFFJVkUJvzhF/v9Uc2xjjkUoQ+VfY9wdkjDXIX6xZSZIxBDN2Usnklg4FZBynO2QubfDAkA==", "user"=>{"email"=>"stephanie@creatorrepublic.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "stephanie@creatorrepublic.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2015-09-17 17:29:29.827022"], ["sign_in_count", 2], ["updated_at", "2015-09-17 17:29:29.828707"], ["id", 1]]
+  [1m[36m (720.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://172.17.0.155:3000/
+Completed 302 Found in 804ms (ActiveRecord: 721.4ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:29:30 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 133ms (Views: 131.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 172.17.0.169 at 2015-09-17 10:29:34 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xR9ByE6kzItgToxbDi6+hRCtzIv4TOYUh+VFRX72AKODsMOYt63zKvXemNsXg9j2Yy50/lIAc6lsr7/rmZwvNQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://172.17.0.155:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 172.17.0.169 at 2015-09-17 10:29:34 -0700
+Cannot render console from 172.17.0.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 113ms (Views: 112.3ms | ActiveRecord: 0.0ms)
